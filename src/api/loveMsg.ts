@@ -8,9 +8,12 @@ const { TIANQI_APPID, TIANQI_APPSECRET } = process.env
  */
 
 // 天气
+// const WEATHER_API = `https://v0.yiketianqi.com/api?unescape=1&version=v61&appid=${TIANQI_APPID}&appsecret=${TIANQI_APPSECRET}`
 const WEATHER_API = `https://v0.yiketianqi.com/api?unescape=1&version=v61&appid=${TIANQI_APPID}&appsecret=${TIANQI_APPSECRET}`
 
 enum LoveMsgURL {
+  // 天气预报
+  weatherInfo = 'http://api.tianapi.com/tianqi/index',
   // 每日简报
   dailyBriefing = 'http://api.tianapi.com/bulletin/index',
   // 今日头条
@@ -66,7 +69,8 @@ class API {
 
       console.log('天气请求成功==>', city_name)
       return result
-    } catch (error) {
+    }
+    catch (error) {
       console.log('天气请求失败==>', error)
       return null
     }
@@ -120,6 +124,14 @@ class API {
     return res?.[0]
   }
 
+  async getWeatherInfo(city: string) {
+    const res = await getTian<any[]>({
+      url: LoveMsgURL.weatherInfo,
+      params: { city },
+    })
+    return res?.[0]
+  }
+
   // 土味情话
   async getSaylove() {
     const res = await getTian<SayloveProps[]>({ url: LoveMsgURL.saylove })
@@ -143,7 +155,8 @@ class API {
     try {
       const response = await axios(LoveMsgURL.oneWord, { timeout: 30000 })
       return response.data
-    } catch (error) {
+    }
+    catch (error) {
       console.log(error)
       return null
     }
