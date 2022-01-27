@@ -45,7 +45,7 @@ export const textCardTemplate = (data: TextCardTemplateProps) => {
   description += `
   [ 点我有惊喜 ] ❤️ 🧡 💛 💚 💖`
 
-  const title = `这是我们在一起的第 ${dateLength} 天`
+  const title = `这是我们在一起的第 ${dateLength + 1} 天`
 
   return {
     msgtype: 'textcard',
@@ -55,7 +55,7 @@ export const textCardTemplate = (data: TextCardTemplateProps) => {
       // url: 'https://api.lovelive.tools/api/SweetNothings',
       // url: 'https://v1.jinrishici.com/all.svg',
       url: 'https://api.vvhan.com/api/60s', // 60s看世界
-      btntxt: 'By rugu',
+      btntxt: 'rugu',
     },
   }
 }

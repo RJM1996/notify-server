@@ -29,7 +29,8 @@ export default async function WXbot(msg: string) {
       },
     })
     if (response.data?.errcode === 0) console.log('🎉发送成功！！！')
-  } catch (error) {
+  }
+  catch (error) {
     console.log(`发送失败 => ${error}`)
   }
 }
