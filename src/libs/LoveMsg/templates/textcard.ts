@@ -33,7 +33,7 @@ export const textCardTemplate = (data: TextCardTemplateProps) => {
 农历 | ${lubarmonth}${lunarday} ${lunar_festival_info} ${jieqi_info}\n
 今日天气状况：
 天气：${weather.weather}
-温度：${weather.lowest} ~ ${weather.highest}℃
+温度：${weather.lowest} ~ ${weather.highest}
 湿度：${weather.humidity}%\n`
 
   if (oneWord) {
@@ -45,7 +45,9 @@ export const textCardTemplate = (data: TextCardTemplateProps) => {
   description += `
   [ 点我有惊喜 ] ❤️ 🧡 💛 💚 💖`
 
-  const title = `这是我们在一起的第 ${dateLength + 1} 天`
+  let title = `这是我们在一起的第 ${dateLength + 1} 天`
+  if (dateLength + 1 === 180)
+    title = '今天我们在一起半年啦！'
 
   return {
     msgtype: 'textcard',
