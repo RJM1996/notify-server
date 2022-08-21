@@ -11,7 +11,7 @@
 
 import dayjs from '../../../utils/dayjs'
 
-// 相识的日子
+// 在一起的日子
 const start_stamp = '2021-09-25'
 
 export const textCardTemplate = (data: TextCardTemplateProps) => {
@@ -45,9 +45,13 @@ export const textCardTemplate = (data: TextCardTemplateProps) => {
   description += `
   [ 点我有惊喜 ] ❤️ 🧡 💛 💚 💖`
 
-  let title = `这是我们在一起的第 ${dateLength + 1} 天`
-  if (dateLength + 1 === 180)
-    title = '今天我们在一起半年啦！'
+  let title = `老婆，今天是爱你的第 ${dateLength + 1} 天~`
+
+  if (dateLength - 30 === 365)
+    title = '老婆，我们相识一周年啦~'
+
+  if (dateLength + 1 === 365)
+    title = '老婆，恋爱一周年快乐！！！'
 
   return {
     msgtype: 'textcard',
