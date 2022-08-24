@@ -47,8 +47,8 @@ export const textCardTemplate = (data: TextCardTemplateProps) => {
 
   let title = `老婆，今天是爱你的第 ${dateLength + 1} 天~`
 
-  if (dateLength - 30 === 365)
-    title = '老婆，我们相识一周年啦~'
+  if (dateLength + 31 === 365)
+    title = '老婆，我们相识一周年啦~  （迟到的问候哈哈）'
 
   if (dateLength + 1 === 365)
     title = '老婆，恋爱一周年快乐！！！'
