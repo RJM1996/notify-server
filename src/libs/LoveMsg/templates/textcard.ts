@@ -47,16 +47,16 @@ export const textCardTemplate = (data: TextCardTemplateProps) => {
 
   const meetDayCount = dateLength + 32 // 相识
   const loveDayCount = dateLength + 1 // 在一起
-  let title = `老婆，今天是爱你的第 ${dateLength + 1} 天 💖\n`
+  let title = `老婆，今天是爱你的第 ${loveDayCount} 天 💖\n`
   const bigDays = [520, 600, 700, 800, 900, 1000]
 
   if (bigDays.includes(loveDayCount))
     title = `老婆，我们在一起 ${loveDayCount} 天啦！永远爱你 😘`
   if (bigDays.includes(meetDayCount))
     title = `老婆，我们认识 ${loveDayCount} 天啦！永远爱你 😘`
-  if (loveDayCount === 696)
+  if (loveDayCount == 696)
     title = `老婆，七夕前一天快乐！`
-  if (loveDayCount === 697)
+  if (loveDayCount == 697)
     title = `老婆，七夕快乐！永远爱宝子😘`
 
   return {
