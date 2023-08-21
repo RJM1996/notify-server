@@ -54,6 +54,10 @@ export const textCardTemplate = (data: TextCardTemplateProps) => {
     title = `老婆，我们在一起 ${loveDayCount} 天啦！永远爱你 😘`
   if (bigDays.includes(meetDayCount))
     title = `老婆，我们认识 ${loveDayCount} 天啦！永远爱你 😘`
+  if (loveDayCount === 696)
+    title = `老婆，七夕前一天快乐！`
+  if (loveDayCount === 697)
+    title = `老婆，七夕快乐！永远爱宝子😘`
 
   return {
     msgtype: 'textcard',
